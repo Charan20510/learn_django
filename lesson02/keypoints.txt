@@ -1,0 +1,46 @@
+-----   commands    -----
+
+py --version                                    // check version of python
+py -m venv "<name-of-venv>"                     // create virtual environment
+venv\Scripts\activate                           // activate venv in PS
+py -m pip install django                        // install django in venv
+py -m pip install -U pip                        // use "-U" for "--upgrade"
+django-admin startproject <project-name>        // create django project
+py manage.py runserver                          // run server
+
+
+
+-----   Library & Functions    -----
+
+from django.http import HttpResponse
+from django.shortcuts import render             // return render(request, ".html")
+
+
+
+-----   Shortcuts    -----
+
+ctrl + D                                        // select next instance of the same name
+ctrl + shift + I                                // console in browser
+
+
+
+-----   Settings    -----
+
+'DIRS': ['templates'],                          // where templates are i.e "same as manage.py"
+###   static assets   ###
+
+import os
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')            // where static assets are i.e "same as manage.py"
+]
+
+#########################
+
+
+
+-----   Templating Engine   -----
+
+{% load static %}                               // import static files
+href="{% static 'css/style.css' %}"             // apply css to html
+src="{% static 'js/main.js' %}" defer           // apply js to html
