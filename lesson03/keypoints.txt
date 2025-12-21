@@ -1,0 +1,63 @@
+-----   commands    -----
+
+py --version                                    // check version of python
+py -m venv "<name-of-venv>"                     // create virtual environment
+venv\Scripts\activate                           // activate venv in PS
+py -m pip install django                        // install django in venv
+py -m pip install -U pip                        // use "-U" for "--upgrade"
+django-admin startproject <project-name>        // create django project
+py manage.py runserver                          // run server
+py manage.py startapp <app-name>                // create django project app/application
+py manage.py makemigrations                     // prepare up the commands to build a table
+py manage.py migrate                            // make the table
+
+
+
+-----   Library & Functions    -----
+
+from django.http import HttpResponse
+from django.shortcuts import render             // return render(request, ".html")
+from django.urls import path, include           // link app urls with main project urls
+
+
+
+-----   Shortcuts    -----
+
+ctrl + D                                        // select next instance of the same name
+ctrl + shift + I                                // console in browser
+ctrl + ,                                        // vs code settings
+
+
+
+-----   Settings    -----
+
+'DIRS': ['templates'],                          // where templates are i.e "same as manage.py"
+***   static assets   ***
+
+import os
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')            // where static assets are i.e "same as manage.py"
+]
+
+*************************
+INSTALLED_APPS = ['posts']                      // app created should be listed here
+Emmet: Include Languages - django-html html     // django extension fix
+
+
+
+-----   Templating Engine   -----
+
+{% load static %}                               // import static files
+href="{% static 'css/style.css' %}"             // apply css to html
+src="{% static 'js/main.js' %}" defer           // apply js to html
+{% block <bolck-name:title> %}                  // start a block
+{% endblock <bolck-name:title> %}               // end the block
+{% extends <html-page:layout.html> %}           // enables code reusability
+
+
+
+-----   Note    -----
+
+#   use single form of title in models.
+    eg. class Post(models.Model)
